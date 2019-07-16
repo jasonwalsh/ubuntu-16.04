@@ -13,12 +13,17 @@
         },
         "most_recent": true,
         "owners": [
-          "aws-marketplace",
-          "self"
+          "self",
+          "aws-marketplace"
         ]
       },
       "ssh_username": "ubuntu",
       "type": "amazon-ebs"
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant"
     }
   ],
   "provisioners": [

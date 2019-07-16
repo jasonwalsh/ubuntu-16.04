@@ -1,6 +1,23 @@
 jobs:
   build:
     docker:
+      - image: chef/inspec
+    environment:
+      CHEF_LICENSE: accept-silent
+    steps:
+      - checkout
+      - run: |
+          wget https://releases.hashicorp.com/packer/1.4.2/packer_1.4.2_linux_amd64.zip \
+            && unzip -d /usr/local/bin packer_1.4.2_linux_amd64.zip \
+            && rm packer_1.4.2_linux_amd64.zip
+      - run: packer build packer/template.json
+      - persist_to_workspace:
+          paths:
+            - packer_amazon-ebs_aws.box
+          root: ~/ubuntu-16.04/packer
+    working_directory: ~/ubuntu-16.04
+  verify:
+    docker:
       - image: ruby:2.6.3
     steps:
       - checkout
@@ -12,4 +29,32 @@ jobs:
           paths:
             - /usr/local/bundle
       - run: kitchen test --destroy=always
+  release:
+    docker:
+      - image: circleci/node:10.16
+    steps:
+      - checkout
+      - restore_cache:
+          key: npm-cache
+      - attach_workspace:
+          at: ~/ubuntu-16.04/packer
+      - run: sudo npm install @semantic-release/changelog -D
+      - run: sudo npm install @semantic-release/git -D
+      - run: npx semantic-release
+      - save_cache:
+          key: npm-cache
+          paths:
+            - node_modules
 version: 2
+workflows:
+  build-verify-release:
+    jobs:
+      - build
+      - verify
+      - release:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build
+            - verify
