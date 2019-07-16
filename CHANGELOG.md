@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/jasonwalsh/ubuntu-16.04/compare/v1.0.0...v1.0.1) (2019-07-16)
+
+
+### Bug Fixes
+
+* attempt to fix artifact upload ([58673fa](https://github.com/jasonwalsh/ubuntu-16.04/commit/58673fa))
+
 # 1.0.0 (2019-07-16)
 
 
