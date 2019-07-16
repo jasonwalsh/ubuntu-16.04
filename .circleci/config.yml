@@ -14,7 +14,7 @@ jobs:
       - persist_to_workspace:
           paths:
             - packer_amazon-ebs_aws.box
-          root: ~/ubuntu-16.04/packer
+          root: ~/ubuntu-16.04
     working_directory: ~/ubuntu-16.04
   verify:
     docker:
@@ -37,7 +37,7 @@ jobs:
       - restore_cache:
           key: npm-cache
       - attach_workspace:
-          at: ~/ubuntu-16.04/packer
+          at: ~/ubuntu-16.04
       - run: sudo npm install @semantic-release/changelog -D
       - run: sudo npm install @semantic-release/git -D
       - run: npx semantic-release

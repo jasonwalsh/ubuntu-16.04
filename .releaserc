@@ -6,7 +6,7 @@
       {
         "assets": [
           {
-            "path": "packer/packer_amazon-ebs_aws.box"
+            "path": "~/ubuntu-16.04/packer_amazon-ebs_aws.box"
           }
         ]
       }
