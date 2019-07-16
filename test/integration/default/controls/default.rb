@@ -16,6 +16,10 @@ packages.each do |pkg|
   end
 end
 
+describe package('unattended-upgrades') do
+  it { should_not be_installed }
+end
+
 ['apt-daily.service', 'apt-daily.timer'].each do |service|
   describe systemd_service(service) do
     it { should_not be_running }

@@ -8,6 +8,12 @@
     - '{{ ansible_env.HOME }}/.bashrc'
     - '{{ ansible_env.HOME }}/.bash_profile'
 
+- name: Uninstall unattended-upgrades
+  apt:
+    name: unattended-upgrades
+    state: absent
+  become: true
+
 - name: Install required packages
   apt:
     name:
