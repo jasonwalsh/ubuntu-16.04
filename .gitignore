@@ -78,3 +78,13 @@ Sessionx.vim
 tags
 # Persistent undo
 [._]*.un~
+# Cache objects
+packer_cache/
+
+# For built boxes
+*.box
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.log
