@@ -1,0 +1,15 @@
+jobs:
+  build:
+    docker:
+      - image: ruby:2.6.3
+    steps:
+      - checkout
+      - restore_cache:
+          key: bundler-{{ checksum "Gemfile.lock" }}
+      - run: bundle install
+      - save_cache:
+          key: bundler-{{ checksum "Gemfile.lock" }}
+          paths:
+            - /usr/local/bundle
+      - run: kitchen test --destroy=always
+version: 2
