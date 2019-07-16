@@ -1,0 +1,11 @@
+copyright: Jason Walsh
+inspec_version: "~> 4.7"
+license: MIT
+maintainer: Jason Walsh
+name: ubuntu-16.04
+summary: An InSpec Ubuntu 16.04
+supports:
+  - platform-name: ubuntu
+    release: 16.04
+title: Ubuntu 16.04
+version: 0.1.0

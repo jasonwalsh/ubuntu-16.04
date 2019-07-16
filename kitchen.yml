@@ -1,0 +1,21 @@
+---
+driver:
+  name: ec2
+
+platforms:
+  - driver:
+      image_id: ami-03a3accd0c3483a79
+    name: ubuntu-16.04
+
+provisioner:
+  hosts: all
+  name: ansible_playbook
+  require_chef_for_busser: false
+  require_ruby_for_busser: false
+  roles_path: roles
+
+suites:
+  - name: default
+
+verifier:
+  name: inspec
