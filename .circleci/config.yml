@@ -58,3 +58,4 @@ workflows:
           requires:
             - build
             - verify
+  version: 2
