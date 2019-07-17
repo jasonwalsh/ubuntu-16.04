@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/jasonwalsh/ubuntu-16.04/compare/v1.0.1...v1.0.2) (2019-07-17)
+
+
+### Bug Fixes
+
+* **inspec:** accept Chef license silently ([7462aad](https://github.com/jasonwalsh/ubuntu-16.04/commit/7462aad))
+
 ## [1.0.1](https://github.com/jasonwalsh/ubuntu-16.04/compare/v1.0.0...v1.0.1) (2019-07-16)
 
 
