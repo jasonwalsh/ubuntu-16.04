@@ -41,6 +41,9 @@
       "type": "ansible-local"
     },
     {
+      "inspec_env_vars": [
+        "CHEF_LICENSE=accept-silent"
+      ],
       "profile": "{{ template_dir }}/../test/integration/default",
       "type": "inspec"
     }
