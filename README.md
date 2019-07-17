@@ -1,6 +1,6 @@
 > MongoDB Ubuntu 16.04 [Amazon Machine Image](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) (AMI)
 
-[![CircleCI](https://img.shields.io/circleci/build/github/jasonwalsh/ubuntu-16.04/master.svg?style=flat-square)](https://circleci.com/gh/jasonwalsh/ubuntu-16.04)
+[![CircleCI](https://img.shields.io/circleci/build/github/jasonwalsh/ubuntu-16.04/master.svg?style=flat-square)](https://circleci.com/gh/jasonwalsh/ubuntu-16.04) [![GitHub release](https://img.shields.io/github/release/jasonwalsh/ubuntu-16.04.svg?style=flat-square)](https://github.com/jasonwalsh/ubuntu-16.04/releases/latest)
 
 ## Contents
 
