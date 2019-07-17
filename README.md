@@ -76,7 +76,7 @@ To run the entire Kitchen suite of commands, invoke the following command:
 
     $ docker-compose up
 
-The previous command invokes the Kitchen [`test`](https://docs.chef.io/ctl_kitchen.html#kitchen-test) subcommand, which creates a new instance, runs the Ansible Playbook, run the compliance tests, and then destroys the instance.
+The previous command invokes the Kitchen [`test`](https://docs.chef.io/ctl_kitchen.html#kitchen-test) subcommand, which creates a new instance, runs the Ansible Playbook, runs the compliance tests, and then destroys the instance.
 
 To invoke different subcommands, invoke the following command:
 
@@ -86,7 +86,7 @@ Where `target` is the name of the Docker Compose [service](https://docs.docker.c
 
 ## Examples
 
-Suppose the [Apache2 Web Server](https://help.ubuntu.com/lts/serverguide/httpd.html) is a required dependency for the Amazon Machine Image. Since having Apache2 installed is the *desired* state, then writing the InSpec test first is trivial.
+Suppose [Apache2 Web Server](https://help.ubuntu.com/lts/serverguide/httpd.html) is a required dependency for the Amazon Machine Image. Since having Apache2 installed is the *desired* state, then writing the InSpec test first is trivial.
 
 Append the following InSpec code to the [`test/integration/default/controls/default.rb`](test/integration/default/controls/default.rb) file:
 
