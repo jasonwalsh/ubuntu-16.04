@@ -2,6 +2,8 @@
 
 - name: Create bash initialization files
   file:
+    access_time: preserve
+    modification_time: preserve
     path: '{{ item }}'
     state: touch
   with_items:
@@ -24,18 +26,16 @@
     update_cache: false
   become: true
 
-- name: Disable apt-daily.service and apt-daily.timer
+- name: Disable apt-daily.timer
   systemd:
     enabled: false
-    name: '{{ item }}'
+    name: apt-daily.timer
     state: stopped
   become: true
-  with_items:
-    - apt-daily.service
-    - apt-daily.timer
 
 - name: Download and install Packer
   unarchive:
+    creates: /usr/local/bin/packer
     dest: /usr/local/bin
     remote_src: true
     src: https://releases.hashicorp.com/packer/1.4.2/packer_1.4.2_linux_amd64.zip
