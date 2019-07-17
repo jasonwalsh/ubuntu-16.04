@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/jasonwalsh/ubuntu-16.04/compare/v1.0.2...v1.0.3) (2019-07-17)
+
+
+### Bug Fixes
+
+* **role:** make common role idempotent ([769359a](https://github.com/jasonwalsh/ubuntu-16.04/commit/769359a))
+
 ## [1.0.2](https://github.com/jasonwalsh/ubuntu-16.04/compare/v1.0.1...v1.0.2) (2019-07-17)
 
 
